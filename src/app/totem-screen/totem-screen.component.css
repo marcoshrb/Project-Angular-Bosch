@@ -1,0 +1,19 @@
+.card {
+    background-color: rgb(253, 153, 2);
+    margin-top: 20px;
+}
+.bem-vindo{
+    display: flex;
+    color: white;
+    justify-content: center;
+    margin-top: 2%;
+    font-size: 50px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+.card-title{
+    font-family: 'Bebas Neue', sans-serif;
+    font-family: 'Roboto Slab', serif;
+}
+a{
+    text-decoration: none;
+}
