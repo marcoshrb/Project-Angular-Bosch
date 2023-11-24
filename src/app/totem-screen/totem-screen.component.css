@@ -1,3 +1,4 @@
+
 .card {
     background-color: rgb(253, 153, 2);
     margin-top: 20px;
@@ -16,4 +17,25 @@
 }
 a{
     text-decoration: none;
+}
+.footer{
+    background-color: rgb(253, 153, 2);
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    height: 400px;
+}
+.list-group-item{
+    background-color: rgb(253, 153, 2);
+    border-color: black;
+}
+.submit-detalhes{
+    min-width: 48%;
+    display: inline-block;
+    min-height: 70px;
+}
+.scroll::-webkit-scrollbar { 
+	display: none;
 }
