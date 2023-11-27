@@ -10,5 +10,9 @@ import {MatButtonModule} from '@angular/material/button';
   styleUrl: './pedidos-screen.component.css'
 })
 export class PedidosScreenComponent {
+  showComponent = true;
 
+  toggleComponent() {
+    this.showComponent = !this.showComponent;
+  }
 }

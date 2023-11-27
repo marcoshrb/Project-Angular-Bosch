@@ -12,4 +12,13 @@ import {MatIconModule} from '@angular/material/icon';
 })
 export class TotemScreenComponent {
 
+  showComponent = true;
+  maisDetalhes = false;
+
+  toggleComponent() {
+    this.showComponent = !this.showComponent;
+  }
+  togglemaisDetalhes() {
+    this.maisDetalhes = !this.maisDetalhes;
+  }
 }

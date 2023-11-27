@@ -1,6 +1,13 @@
 .card {
     margin-top: 10%;
     background-color: rgb(253, 153, 2);
+    height: 600px;
+}
+.card-text{
+    overflow: scroll;
+}
+.card-text::-webkit-scrollbar { 
+	display: none;
 }
 .bem-vindo{
     display: flex;
