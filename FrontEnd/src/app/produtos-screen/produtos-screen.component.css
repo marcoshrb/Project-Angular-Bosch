@@ -3,6 +3,9 @@
     background-color: rgb(253, 153, 2);
     height: 600px;
 }
+.card-adicionar:hover{
+    background-color: rgb(110, 109, 13);
+}
 .card-text{
     overflow: scroll;
 }
@@ -26,4 +29,16 @@
 }
 .links-Cards {
     text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+.aAdicionar{
+    color: black;
+}
+.aAdicionar:hover{
+    cursor: pointer;
+}
+.modal-content{
+    background-color: gray;
 }

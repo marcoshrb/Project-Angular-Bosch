@@ -4,7 +4,7 @@
             style="height: 100px; width: 100px; margin: 20px; border-radius: 50%;">
     </div>
 </div>
-<nav  class="navbar navbar-expand-lg " style="background-color: rgb(253, 153, 2);">
+<nav class="navbar navbar-expand-lg " style="background-color: rgb(253, 153, 2);">
     <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNav" style="justify-content: space-around;">
             <ul class="navbar-nav">
@@ -16,12 +16,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../totem">Totem</a>
-                </li>   
+                </li>
             </ul>
             <button type="button" class="btn btn-secondary" disabled>FullScreen</button>
         </div>
     </div>
-  </nav>
+</nav>
 
 <h1 class="bem-vindo card-title">Produtos</h1>
 
@@ -76,6 +76,20 @@
                 </div>
             </div>
         </div>
+
+        <!-- adicionar -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-adicionar" style="width: 100%; min-height: 70%;">
+                <a href="" class="aAdicionar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="../../assets/img/MaisSimbolo.png" class="card-img-top p-2 p-md-5" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">Adicionar produto</h1>
+
+                    </div>
+
+                </a>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -95,6 +109,56 @@
                     <h1>R$40,80</h1>
                     <a href="#" class="btn btn-dark">Editar</a>
                 </div>
+            </div>
+        </div>
+
+
+        <!-- adicionar -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card card-adicionar" style="width: 100%; min-height: 70%;">
+                <a class="aAdicionar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img src="../../assets/img/MaisSimbolo.png" class="card-img-top p-2 p-md-5" alt="...">
+                    <div class="card-body">
+                        <h1 class="card-title">Adicionar produto</h1>
+
+                    </div>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+
+                    <div class="card" style="width: 100%; min-height: 40vw;">
+                        <img src="../../assets/img/Oferta_Vasco.avif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h1 class="card-title">
+                                <input type="text" class="form-control" placeholder="Nome:" aria-label="Recipient's username with two button addons">
+                            </h1>
+                            <p class="card-text">
+                                <textarea name="" id="" class="form-control" placeholder="Descrição:" cols="30" rows="4"></textarea>
+                            </p> 
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <h1>
+                                <input type="text" class="form-control" placeholder="Preço:" aria-label="Recipient's username with two button addons">
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="border: 0cm;">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success">Adicionar</button>
             </div>
         </div>
     </div>

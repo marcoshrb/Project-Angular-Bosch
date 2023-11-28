@@ -13,7 +13,8 @@
 
 .card {     
     min-width: 30vw;
-    min-height: 55vh;
+    max-height: 55vh;
+    min-height: 30vh;
 
 }
 .input-group {
