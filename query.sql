@@ -18,16 +18,29 @@ create table Usuario(
 );
 go
 
+create table Ingredientes(
+    ID int identity primary key,
+    Nome varchar(100) not null
+);
+go
+
+
 create table Produto(
     ID int identity primary key,
     Imagem varbinary(MAX) not null,
-    nome varchar(80) not null,
-    preco float not null
-    descricacao varchar(500),
-    promocao float,
-    descricacaoPromocao varchar(100)
+    Nome varchar(80) not null,
+    Preco float not null,
+    Descricao varchar(500),
+    Promocao float,
+    DescricaoPromocao varchar(100)
 );
 go
+
+create table ProdutoIngredientes(
+    ID int identity primary key,
+    IngredientesID int references Ingredientes(ID) not null,
+    ProdutoID int references Produto(ID) not null
+)
 
 create table Pedido(
     ID int identity primary key,
@@ -48,6 +61,6 @@ create table Oferta(
     ID int identity primary key,
     Nome varchar(100) not null,
     ProdutoID int references Produto(ID),
-    descricacao varchar(500) not null
+    Descricao varchar(500) not null
 );
 go
