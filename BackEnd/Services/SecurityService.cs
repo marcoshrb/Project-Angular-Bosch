@@ -9,7 +9,7 @@ namespace BackEnd.Services;
 
 public class SecurityService : ISecurityService
 {
-    public async Task<string> GenerateSalt()
+   public async Task<string> GenerateSalt()
     {
         var saltBytes = getRandomArray();
         var base64salt = Convert.ToBase64String(saltBytes);
@@ -152,10 +152,5 @@ public class SecurityService : ISecurityService
         );
         var hashBytes = hashAlgorithm.GetBytes(32);
         return hashBytes;
-    }
-
-    public Task GenerateJwt(object value)
-    {
-        throw new NotImplementedException();
     }
 }

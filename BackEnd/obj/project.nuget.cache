@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "xRPQaI3SmGBqOCZjHoQKotHbiPm2+RFOnqsBl0E+cn6eesdOVTMfLjJnYa4YfNcgk+x9KxfeSlgsX8LGdbtNzw==",
+  "dgSpecHash": "g3a3MLXQmxg3iGVquy5GnQt9FIgn2K78OVd+jSY7r0goE5CdN9q5nUPN8prRb+svLwcld1vb4z/BYN5Td8PZSg==",
   "success": true,
   "projectFilePath": "C:\\Users\\disrct\\Desktop\\Project-Angular-Bosch\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
@@ -81,7 +81,8 @@
     "C:\\Users\\disrct\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\disrct\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\disrct\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\disrct\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\disrct\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\disrct\\.nuget\\packages\\trevisharp.security.jwt\\1.0.0\\trevisharp.security.jwt.1.0.0.nupkg.sha512"
   ],
   "logs": []
 }

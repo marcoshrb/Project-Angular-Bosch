@@ -1290,6 +1290,18 @@
           }
         }
       },
+      "Trevisharp.Security.Jwt/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "lib/net6.0/Trevisharp.Security.Jwt.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/Trevisharp.Security.Jwt.dll": {}
+        }
+      },
       "DTO/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
@@ -4094,6 +4106,18 @@
         "version.txt"
       ]
     },
+    "Trevisharp.Security.Jwt/1.0.0": {
+      "sha512": "JMcdAjQpLl1TAYN+8owQ07SVlVSDvlVwAalCuilPviZJFoaPaFpCxIjV20mi1IZya3tQC2AgfpCXWNDbG9esLA==",
+      "type": "package",
+      "path": "trevisharp.security.jwt/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/Trevisharp.Security.Jwt.dll",
+        "trevisharp.security.jwt.1.0.0.nupkg.sha512",
+        "trevisharp.security.jwt.nuspec"
+      ]
+    },
     "DTO/1.0.0": {
       "type": "project",
       "path": "../DTO/DTO.csproj",
@@ -4107,7 +4131,8 @@
       "Microsoft.EntityFrameworkCore.Design >= 7.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.0",
       "Swashbuckle.AspNetCore >= 6.5.0",
-      "System.Data.SqlClient >= 4.8.5"
+      "System.Data.SqlClient >= 4.8.5",
+      "Trevisharp.Security.Jwt >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4172,6 +4197,10 @@
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.5, )"
+          },
+          "Trevisharp.Security.Jwt": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [
