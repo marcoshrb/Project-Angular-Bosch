@@ -1,7 +1,9 @@
+using System;
+
 namespace DTO;
 
 public class UsuarioData
 {
-    public string Login { get; set; }
-    public string Password { get; set; }
+    public string name { get; set; }
+    public string password { get; set; }
 }

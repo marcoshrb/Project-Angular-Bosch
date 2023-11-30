@@ -37,7 +37,7 @@ public partial class VascoContext : DbContext
     {
         modelBuilder.Entity<Ingrediente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Ingredie__3214EC27B2D60EB8");
+            entity.HasKey(e => e.Id).HasName("PK__Ingredie__3214EC274EF38DF9");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Nome)
@@ -47,7 +47,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Ofertum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC276D6AB309");
+            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC27CCC43EFE");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descricao)
@@ -65,7 +65,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27805DC964");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27B639F9C4");
 
             entity.ToTable("Pedido");
 
@@ -77,7 +77,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC276703DBF5");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27AE49ABFC");
 
             entity.ToTable("Produto");
 
@@ -95,7 +95,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<ProdutoIngrediente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoI__3214EC277DB68C9D");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoI__3214EC27322EC1E6");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.IngredientesId).HasColumnName("IngredientesID");
@@ -114,7 +114,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<ProdutoPedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC270470727E");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC27F187292F");
 
             entity.ToTable("ProdutoPedido");
 
@@ -135,7 +135,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC2724E379B5");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27E5765BBA");
 
             entity.ToTable("Usuario");
 

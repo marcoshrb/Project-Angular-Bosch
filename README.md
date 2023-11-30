@@ -1,9 +1,7 @@
-Obs: 'Tem tela/Tem Interface' = Possui parte visual, mesmo sem funcionar.
-
 - [x] Repositório GIT criado.
 - [x] Porjeto do Frontend Angular Criado.
 - [x] Possui tela de Login.
-- [ ] Possui tela de cadastro.
+- [x] Possui tela de cadastro.
 - [ ] Possui tela de usuário normal das promoções.
 - [ ] Possui tela para visualizar código da promoção.
 - [x] Possui tela de Administrador.

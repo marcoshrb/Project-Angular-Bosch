@@ -14,7 +14,6 @@
 .card {     
     min-width: 30vw;
     max-height: 65vh;
-    min-height: 40vh;
 
 }
 .input-group {
@@ -30,4 +29,3 @@
 .input-group-text{
     background-color:rgb(187, 202, 218);
 }
-

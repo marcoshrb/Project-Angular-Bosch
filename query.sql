@@ -14,7 +14,8 @@ create table Usuario(
     ID int identity primary key,
     Nome varchar(80) not null,
     Senha varchar(MAX) not null,
-    Salt varchar(200) not null
+    Salt varchar(200) not null,
+    Adm bit not null
 );
 go
 

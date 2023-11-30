@@ -1,4 +1,20 @@
+using System;
+using BackEnd.Model;
+using BackEnd.Services;
+using Trevisharp.Security.Jwt;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddScoped<VascoContext>();
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddSingleton<CryptoService>( p => new() {
+    InternalKeySize = 24,
+    UpdatePeriod = TimeSpan.FromDays(1)
+});
+builder.Services.AddSingleton<ISecurityService, SecurityService>();
 
 // Add services to the container.
 
@@ -15,6 +31,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors();
 
 app.UseHttpsRedirection();
 

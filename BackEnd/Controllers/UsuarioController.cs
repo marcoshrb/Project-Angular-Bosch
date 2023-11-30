@@ -27,22 +27,20 @@ public class UsuarioController : ControllerBase
         [FromServices]ISecurityService security,
         [FromServices]CryptoService crypto)
     {
-        var loggedUser = await service
-            .GetByLogin(user.Login);
+        var loggedUser = await service.GetByLogin(user.name);
         
         if (loggedUser == null)
             return Unauthorized("Usuário não existe.");
         
         var password = await security.HashPassword(
-            user.Password, loggedUser.Salt
+            user.password, loggedUser.Salt
         );
         var realPassword = loggedUser.Senha;
         if (password != realPassword)
             return Unauthorized("Senha incorreta.");
         
         var jwt = crypto.GetToken(new {
-            id = loggedUser.Id,
-            isAdm = loggedUser.Adm
+            id = loggedUser.Id
         });
 
         return Ok(new { jwt });
@@ -55,9 +53,9 @@ public class UsuarioController : ControllerBase
         [FromServices]IUserService service)
     {
         var errors = new List<string>();
-        if (user is null || user.Login is null)
+        if (user is null || user.name is null)
             errors.Add("É necessário informar um login.");
-        if (user.Login.Length < 5)
+        if (user.name.Length < 5)
             errors.Add("O Login deve conter ao menos 5 caracteres.");
 
         if (errors.Count > 0)
@@ -65,13 +63,6 @@ public class UsuarioController : ControllerBase
 
         await service.Create(user);
         return Ok();
-    }
-
-    [HttpDelete]
-    [EnableCors("DefaultPolicy")]
-    public IActionResult DeleteUser()
-    {
-        throw new NotImplementedException();
     }
 
 }
