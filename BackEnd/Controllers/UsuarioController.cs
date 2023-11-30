@@ -38,11 +38,11 @@ public class UsuarioController : ControllerBase
         if (password != realPassword)
             return Unauthorized("Senha incorreta.");
         
-        var jwt = await security.GenerateJwt(new {
-            id = loggedUser.Id
-        });
+        // var jwt = await security.GenerateJwt(new {
+        //     id = loggedUser.Id
+        // });
         
-        return Ok(new { jwt });
+        // return Ok(new { jwt });
     }
 
     [HttpPost("register")]

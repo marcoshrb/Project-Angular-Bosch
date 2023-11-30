@@ -154,5 +154,8 @@ public class SecurityService : ISecurityService
         return hashBytes;
     }
 
-
+    public Task GenerateJwt(object value)
+    {
+        throw new NotImplementedException();
+    }
 }
