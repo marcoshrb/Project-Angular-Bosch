@@ -10,13 +10,13 @@ export class ClientService {
 
   register(data: ClientData)
   {
-    this.http.post('user/register', data)
+    this.http.post('usuario/register', data)
       .subscribe(response => console.log(response))
   }
 
   login(data: ClientData, callback: any)
   {
-    this.http.post('user/login', data)
+    this.http.post('usuario/login', data)
       .subscribe(
         response => {
           callback(response)

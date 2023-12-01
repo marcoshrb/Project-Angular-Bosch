@@ -10,11 +10,22 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<VascoContext>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddSingleton<ISecurityService, SecurityService>();
 builder.Services.AddSingleton<CryptoService>( p => new() {
     InternalKeySize = 24,
     UpdatePeriod = TimeSpan.FromDays(1)
 });
-builder.Services.AddSingleton<ISecurityService, SecurityService>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("DefaultPolicy",
+        policy => {
+            policy
+                .AllowAnyHeader()
+                .AllowAnyMethod()
+                .AllowAnyOrigin();
+        });
+});
 
 // Add services to the container.
 

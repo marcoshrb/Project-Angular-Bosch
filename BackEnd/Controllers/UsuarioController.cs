@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace BackEnd.Controllers;
 
 using DTO;
+using Microsoft.Identity.Client;
 using Model;
 using Services;
 using Trevisharp.Security.Jwt;
@@ -19,6 +20,8 @@ using Trevisharp.Security.Jwt;
 [Route("usuario")]
 public class UsuarioController : ControllerBase
 {
+    
+
     [HttpGet("login")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> Login(
@@ -40,7 +43,8 @@ public class UsuarioController : ControllerBase
             return Unauthorized("Senha incorreta.");
         
         var jwt = crypto.GetToken(new {
-            id = loggedUser.Id
+            id = loggedUser.Id,
+            isAdm = loggedUser.Adm
         });
 
         return Ok(new { jwt });
@@ -65,14 +69,5 @@ public class UsuarioController : ControllerBase
         return Ok();
     }
 
-    [HttpGet]
-    [EnableCors("DefaultPolicy")]
-    public async Task<IActionResult> GetAll(
-        [FromBody]UsuarioData user,
-        [FromServices]IUserService service)
-    {
-        var usuarios = service.GetAll();
-
-        return Ok(usuarios);
-    }
+ 
 }

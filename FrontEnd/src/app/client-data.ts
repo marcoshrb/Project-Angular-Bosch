@@ -1,4 +1,4 @@
 export interface ClientData {
-    login: string;
+    name: string;
     password: string;
 }
