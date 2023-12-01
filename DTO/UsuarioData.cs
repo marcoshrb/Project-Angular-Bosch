@@ -6,4 +6,5 @@ public class UsuarioData
 {
     public string name { get; set; }
     public string password { get; set; }
+    public bool adm { get; set; }
 }

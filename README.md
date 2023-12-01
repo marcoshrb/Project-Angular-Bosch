@@ -13,18 +13,18 @@
 - [ ] Tela do totem tem interface para inserção de código da promoção.
 - [x] Tela do totem tem interface para colocar itens na sacola.
 - [x] Banco de dados criado com tabelas de Usuário, Pedido, ItemPedido, Produto, Promoção ou similar.
-- [ ] Rotas no Frontend Configuradas.
+- [x] Rotas no Frontend Configuradas.
 - [x] Projeto Backend C# criado.
-- [ ] CORS Configurado.
-- [ ] HttpClient configurado e podendo ser usado para fazer quests entre Back e Front.
-- [ ] Entity Framework Configurado no Backend e Model gerada.
-- [ ] Bilbioteca de JWT instalada.
-- [ ] Operação de cadastro realmente salva um usuário no banco de dados.
-- [ ] Cadastro tem algumas validações sendo mais robusto.
-- [ ] Login realmente busca usuário no banco de dados.
-- [ ] Aplica salt na senha do usuário.
+- [x] CORS Configurado.
+- [x] HttpClient configurado e podendo ser usado para fazer quests entre Back e Front.
+- [x] Entity Framework Configurado no Backend e Model gerada.
+- [x] Bilbioteca de JWT instalada.
+- [x] Operação de cadastro realmente salva um usuário no banco de dados.
+- [x] Cadastro tem algumas validações sendo mais robusto.
+- [x] Login realmente busca usuário no banco de dados.
+- [x] Aplica salt na senha do usuário.
 - [ ] Aplica slow Hash na senha do usuário.
-- [ ] Login retorna JWT para o frontend que o guarda no Sessin Storage.
+- [x] Login retorna JWT para o frontend que o guarda no Sessin Storage.
 - [ ] Após o Login a página de usuário normal ou adm é mostrada corretamente.
 - [ ] Adm é capaz de ver produtos existentes.
 - [ ] Adm é capaz de cadastrar novos produtos.

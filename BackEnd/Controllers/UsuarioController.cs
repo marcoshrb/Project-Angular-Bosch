@@ -22,7 +22,7 @@ public class UsuarioController : ControllerBase
 {
     
 
-    [HttpGet("login")]
+    [HttpPost("login")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> Login(
         [FromBody]UsuarioData user,
@@ -47,7 +47,7 @@ public class UsuarioController : ControllerBase
             isAdm = loggedUser.Adm
         });
 
-        return Ok(new { jwt });
+        return Ok(new { jwt, loggedUser.Adm });
     }
 
     [HttpPost("register")]
@@ -59,8 +59,8 @@ public class UsuarioController : ControllerBase
         var errors = new List<string>();
         if (user is null || user.name is null)
             errors.Add("É necessário informar um login.");
-        if (user.name.Length < 5)
-            errors.Add("O Login deve conter ao menos 5 caracteres.");
+        if (user.name.Length < 3)
+            errors.Add("O Login deve conter ao menos 3 caracteres.");
 
         if (errors.Count > 0)
             return BadRequest(errors);

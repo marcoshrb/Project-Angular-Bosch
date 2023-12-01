@@ -19,14 +19,16 @@ export class LoginComponent {
     ) 
     { }
 
+  hidePassword = true;
   username = "";
   password = "";
 
   logar()
   {
-
-    if(this.username == "" || this.password == "")
+    if(this.username == "" || this.password == ""){
+      alert('Preencha todos os campos!')
       return;
+    }
 
     this.client.login({
       name: this.username,
@@ -35,12 +37,19 @@ export class LoginComponent {
       if (result == null)
       {
         alert('Senha ou usuário incorreto!')
-        return;
+        
       }
       else
       {
-        sessionStorage.setItem('jwt', JSON.stringify({'value' : result.jwt}))
-        this.router.navigate(['adm']);
+        sessionStorage.setItem('jwt', JSON.stringify(result))
+        if(result.adm){
+          console.log("aaaaaaaaaaaaaaaaaaa")
+          this.router.navigate(['produtos'])
+        }
+        else{
+          console.log("ddddddddddddddddddddddd")
+          this.router.navigate(['cliente'])
+        }
       }
     })
   }

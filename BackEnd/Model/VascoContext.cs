@@ -28,7 +28,6 @@ public partial class VascoContext : DbContext
     public virtual DbSet<ProdutoPedido> ProdutoPedidos { get; set; }
 
     public virtual DbSet<Usuario> Usuarios { get; set; }
-    public object Usuario { get; internal set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
@@ -38,7 +37,7 @@ public partial class VascoContext : DbContext
     {
         modelBuilder.Entity<Ingrediente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Ingredie__3214EC274EF38DF9");
+            entity.HasKey(e => e.Id).HasName("PK__Ingredie__3214EC27E4C03373");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Nome)
@@ -48,7 +47,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Ofertum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC27CCC43EFE");
+            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC27097979CD");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descricao)
@@ -66,7 +65,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27B639F9C4");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27F50B4A1E");
 
             entity.ToTable("Pedido");
 
@@ -78,11 +77,14 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27AE49ABFC");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27C7A7B4AD");
 
             entity.ToTable("Produto");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Cupom)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Descricao)
                 .HasMaxLength(500)
                 .IsUnicode(false);
@@ -96,7 +98,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<ProdutoIngrediente>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoI__3214EC27322EC1E6");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoI__3214EC273407A157");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.IngredientesId).HasColumnName("IngredientesID");
@@ -115,7 +117,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<ProdutoPedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC27F187292F");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC279A60E241");
 
             entity.ToTable("ProdutoPedido");
 
@@ -136,7 +138,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27E5765BBA");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC276F05188D");
 
             entity.ToTable("Usuario");
 

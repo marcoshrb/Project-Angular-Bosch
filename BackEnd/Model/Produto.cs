@@ -13,9 +13,13 @@ public partial class Produto
 
     public double Preco { get; set; }
 
-    public string? Descricao { get; set; }
+    public string Descricao { get; set; } = null!;
 
-    public double? Promocao { get; set; }
+    public bool Promocao { get; set; }
+
+    public double? PrecoPromocao { get; set; }
+
+    public string? Cupom { get; set; }
 
     public string? DescricaoPromocao { get; set; }
 
