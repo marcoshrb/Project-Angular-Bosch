@@ -9,4 +9,6 @@ public interface IUserService
 {
     Task Create(UsuarioData data);
     Task<Usuario> GetByLogin(string login);
+
+    public async Task<Usuario> GetAll();
 }

@@ -41,4 +41,9 @@ public class UserService : IUserService
         
         return await query.FirstOrDefaultAsync();
     }
+
+    public async Task<Usuario> GetAll()
+    {
+        return ctx.Usuarios.ToList();
+    }
 }

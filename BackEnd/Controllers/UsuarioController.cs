@@ -19,7 +19,7 @@ using Trevisharp.Security.Jwt;
 [Route("usuario")]
 public class UsuarioController : ControllerBase
 {
-    [HttpPost("login")]
+    [HttpGet("login")]
     [EnableCors("DefaultPolicy")]
     public async Task<IActionResult> Login(
         [FromBody]UsuarioData user,
@@ -65,4 +65,14 @@ public class UsuarioController : ControllerBase
         return Ok();
     }
 
+    [HttpGet]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> GetAll(
+        [FromBody]UsuarioData user,
+        [FromServices]IUserService service)
+    {
+        var usuarios = service.GetAll();
+
+        return Ok(usuarios);
+    }
 }
