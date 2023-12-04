@@ -2,8 +2,8 @@
 - [x] Porjeto do Frontend Angular Criado.
 - [x] Possui tela de Login.
 - [x] Possui tela de cadastro.
-- [ ] Possui tela de usuário normal das promoções.
-- [ ] Possui tela para visualizar código da promoção.
+- [x] Possui tela de usuário normal das promoções.
+- [x] Possui tela para visualizar código da promoção.
 - [x] Possui tela de Administrador.
 - [x] Possui tela de Pedidos.
 - [x] Possui tela de Cadastro de Produtos.
@@ -25,9 +25,9 @@
 - [x] Aplica salt na senha do usuário.
 - [ ] Aplica slow Hash na senha do usuário.
 - [x] Login retorna JWT para o frontend que o guarda no Sessin Storage.
-- [ ] Após o Login a página de usuário normal ou adm é mostrada corretamente.
+- [x] Após o Login a página de usuário normal ou adm é mostrada corretamente.
 - [ ] Adm é capaz de ver produtos existentes.
-- [ ] Adm é capaz de cadastrar novos produtos.
+- [x] Adm é capaz de cadastrar novos produtos.
 - [ ] Adm é capaz de ver promoções existentes.
 - [ ] Adm é capaz de criar novas promoções.
 - [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.
