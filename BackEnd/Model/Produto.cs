@@ -7,7 +7,6 @@ public partial class Produto
 {
     public int Id { get; set; }
 
-    public byte[] Imagem { get; set; } = null!;
 
     public string Nome { get; set; } = null!;
 
@@ -16,6 +15,7 @@ public partial class Produto
     public string Descricao { get; set; } = null!;
 
     public bool Promocao { get; set; }
+    public byte[]? Imagem { get; set; }
 
     public double? PrecoPromocao { get; set; }
 
@@ -24,8 +24,6 @@ public partial class Produto
     public string? DescricaoPromocao { get; set; }
 
     public virtual ICollection<Ofertum> Oferta { get; } = new List<Ofertum>();
-
-    public virtual ICollection<ProdutoIngrediente> ProdutoIngredientes { get; } = new List<ProdutoIngrediente>();
 
     public virtual ICollection<ProdutoPedido> ProdutoPedidos { get; } = new List<ProdutoPedido>();
 }

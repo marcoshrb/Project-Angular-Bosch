@@ -10,6 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<VascoContext>();
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IProdutoService, ProdutoService>();
 builder.Services.AddSingleton<ISecurityService, SecurityService>();
 builder.Services.AddSingleton<CryptoService>( p => new() {
     InternalKeySize = 24,

@@ -15,15 +15,11 @@ public partial class VascoContext : DbContext
     {
     }
 
-    public virtual DbSet<Ingrediente> Ingredientes { get; set; }
-
     public virtual DbSet<Ofertum> Oferta { get; set; }
 
     public virtual DbSet<Pedido> Pedidos { get; set; }
 
     public virtual DbSet<Produto> Produtos { get; set; }
-
-    public virtual DbSet<ProdutoIngrediente> ProdutoIngredientes { get; set; }
 
     public virtual DbSet<ProdutoPedido> ProdutoPedidos { get; set; }
 
@@ -35,19 +31,9 @@ public partial class VascoContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Ingrediente>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__Ingredie__3214EC27E4C03373");
-
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.Nome)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-        });
-
         modelBuilder.Entity<Ofertum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC27097979CD");
+            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC27FF4F434E");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descricao)
@@ -60,12 +46,12 @@ public partial class VascoContext : DbContext
 
             entity.HasOne(d => d.Produto).WithMany(p => p.Oferta)
                 .HasForeignKey(d => d.ProdutoId)
-                .HasConstraintName("FK__Oferta__ProdutoI__46E78A0C");
+                .HasConstraintName("FK__Oferta__ProdutoI__412EB0B6");
         });
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27F50B4A1E");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27F056B05F");
 
             entity.ToTable("Pedido");
 
@@ -77,7 +63,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC27C7A7B4AD");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC2717649DFC");
 
             entity.ToTable("Produto");
 
@@ -96,28 +82,9 @@ public partial class VascoContext : DbContext
                 .IsUnicode(false);
         });
 
-        modelBuilder.Entity<ProdutoIngrediente>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoI__3214EC273407A157");
-
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.IngredientesId).HasColumnName("IngredientesID");
-            entity.Property(e => e.ProdutoId).HasColumnName("ProdutoID");
-
-            entity.HasOne(d => d.Ingredientes).WithMany(p => p.ProdutoIngredientes)
-                .HasForeignKey(d => d.IngredientesId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProdutoIn__Ingre__3D5E1FD2");
-
-            entity.HasOne(d => d.Produto).WithMany(p => p.ProdutoIngredientes)
-                .HasForeignKey(d => d.ProdutoId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProdutoIn__Produ__3E52440B");
-        });
-
         modelBuilder.Entity<ProdutoPedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC279A60E241");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC2724776867");
 
             entity.ToTable("ProdutoPedido");
 
@@ -128,17 +95,17 @@ public partial class VascoContext : DbContext
             entity.HasOne(d => d.Pedido).WithMany(p => p.ProdutoPedidos)
                 .HasForeignKey(d => d.PedidoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProdutoPe__Pedid__440B1D61");
+                .HasConstraintName("FK__ProdutoPe__Pedid__3E52440B");
 
             entity.HasOne(d => d.Produto).WithMany(p => p.ProdutoPedidos)
                 .HasForeignKey(d => d.ProdutoId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__ProdutoPe__Produ__4316F928");
+                .HasConstraintName("FK__ProdutoPe__Produ__3D5E1FD2");
         });
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC276F05188D");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27802BD47A");
 
             entity.ToTable("Usuario");
 

@@ -5,7 +5,7 @@ namespace BackEnd.Services;
 using DTO;
 using Model;
 
-public interface IProduto
+public interface IProdutoService
 {
-
+    Task Create(ProdutoData data);
 }

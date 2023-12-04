@@ -19,29 +19,19 @@ create table Usuario(
 );
 go
 
-create table Ingredientes(
-    ID int identity primary key,
-    Nome varchar(100) not null
-);
-go
-
-
 create table Produto(
     ID int identity primary key,
-    Imagem varbinary(MAX) not null,
+    Imagem varbinary(MAX) null,
     Nome varchar(80) not null,
     Preco float not null,
-    Descricao varchar(500),
-    Promocao float,
+    Descricao varchar(500) not null,
+    Promocao bit not null,
+	PrecoPromocao float,
+	Cupom varchar(50), 
     DescricaoPromocao varchar(100)
 );
 go
 
-create table ProdutoIngredientes(
-    ID int identity primary key,
-    IngredientesID int references Ingredientes(ID) not null,
-    ProdutoID int references Produto(ID) not null
-)
 
 create table Pedido(
     ID int identity primary key,
