@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientService } from '../client-service';
+import { ClientService } from '../service/client-service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -44,7 +44,7 @@ export class LoginComponent {
         sessionStorage.setItem('jwt', JSON.stringify(result))
         if(result.adm){
           console.log("aaaaaaaaaaaaaaaaaaa")
-          this.router.navigate(['produtos'])
+          this.router.navigate(['adm'])
         }
         else{
           console.log("ddddddddddddddddddddddd")

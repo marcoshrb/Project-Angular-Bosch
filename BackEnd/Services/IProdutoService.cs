@@ -8,4 +8,6 @@ using Model;
 public interface IProdutoService
 {
     Task Create(ProdutoData data);
+
+    List<Produto> GetAll();
 }

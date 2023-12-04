@@ -130,7 +130,7 @@
 </div>
 
 
-<!-- Modal -->
+<!-- Modal Produto -->
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -142,15 +142,15 @@
                         <img src="../../assets/img/Oferta_Vasco.avif" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h1 class="card-title">
-                                <input type="text" class="form-control" placeholder="Nome:" aria-label="Recipient's username with two button addons">
+                                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Nome:" aria-label="Recipient's username with two button addons">
                             </h1>
                             <p class="card-text">
-                                <textarea name="" id="" class="form-control" placeholder="Descrição:" cols="30" rows="4"></textarea>
+                                <textarea [(ngModel)]="descricao" name="" id="" class="form-control" placeholder="Descrição:" cols="30" rows="4"></textarea>
                             </p> 
                         </div>
                         <div class="card-footer text-body-secondary">
                             <h1>
-                                <input type="text" class="form-control" placeholder="Preço:" aria-label="Recipient's username with two button addons">
+                                <input [(ngModel)]="preco" type="text" class="form-control" placeholder="Preço:" aria-label="Recipient's username with two button addons">
                             </h1>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
             </div>
             <div class="modal-footer" style="border: 0cm;">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success">Adicionar</button>
+                <button type="button" class="btn btn-success" (click)="create()">Adicionar</button>
             </div>
         </div>
     </div>

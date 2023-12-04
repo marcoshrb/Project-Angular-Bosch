@@ -7,34 +7,34 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackEnd.Controllers;
 
 [ApiController]
-[Route("produto")]
-public class ProdutoController : ControllerBase
+[Route("pedido")]
+public class PedidoController : ControllerBase
 {
         [HttpPost("create")]
         [EnableCors("DefaultPolicy")]
         public async Task<IActionResult> Create(
-            [FromBody] ProdutoData produto,
-            [FromServices] IProdutoService service)
+            [FromBody] PedidoData pedido,
+            [FromServices] IPedidoService service)
             {
                 var errors = new List<string>();
-                if(produto is null)
-                    errors.Add("É necessário informar um produto.");
+                if(pedido is null)
+                    errors.Add("É necessário informar um pedido.");
                 if(errors.Count > 0)
                     return BadRequest(errors);
 
-                await service.Create(produto);
+                await service.Create(pedido);
                 return Ok();
             }
 
         [HttpGet("getAll")]
         [EnableCors("DefaultPolicy")]
         public IActionResult GetAll(
-            [FromServices] IProdutoService service
+            [FromServices] IPedidoService service
         )
         {
-            var produtos = service.GetAll(); 
+            var pedidos = service.GetAll(); 
 
-            return Ok(produtos);
+            return Ok(pedidos);
         }
        
 }

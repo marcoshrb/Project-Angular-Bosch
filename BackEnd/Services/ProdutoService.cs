@@ -2,6 +2,7 @@
 using BackEnd.Model;
 using BackEnd.Services;
 using DTO;
+using Microsoft.EntityFrameworkCore;
 
 public class ProdutoService: IProdutoService
 {
@@ -27,5 +28,10 @@ public class ProdutoService: IProdutoService
 
         this.ctx.Add(produto);
         await this.ctx.SaveChangesAsync();
+    }
+
+    public List<Produto> GetAll()
+    {
+        return ctx.Produtos.ToList();
     }
 }
