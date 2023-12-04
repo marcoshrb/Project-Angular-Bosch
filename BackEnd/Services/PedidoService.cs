@@ -15,19 +15,19 @@ public class PedidoService: IPedidoService
 
     public async Task Create(PedidoData data)
     {
-        Pedido produto = new Pedido();
+        Pedido pedido = new Pedido();
 
         
-        produto.Nome = data.name;
-        produto.Total = data.total;
-        produto.Entregue = data.entregue;
+        pedido.Nome = data.name;
+        pedido.Total = data.total;
+        pedido.Entregue = data.entregue;
 
-        this.ctx.Add(produto);
+        this.ctx.Add(pedido);
         await this.ctx.SaveChangesAsync();
     }
 
     public List<Pedido> GetAll()
     {
-        throw new NotImplementedException();
+        return ctx.Pedidos.ToList();
     }
 }
