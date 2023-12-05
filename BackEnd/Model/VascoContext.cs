@@ -33,7 +33,7 @@ public partial class VascoContext : DbContext
     {
         modelBuilder.Entity<Ofertum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC27FF4F434E");
+            entity.HasKey(e => e.Id).HasName("PK__Oferta__3214EC2799144C16");
 
             entity.Property(e => e.Id).HasColumnName("ID");
             entity.Property(e => e.Descricao)
@@ -51,11 +51,12 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Pedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC27F056B05F");
+            entity.HasKey(e => e.Id).HasName("PK__Pedido__3214EC2731D33104");
 
             entity.ToTable("Pedido");
 
             entity.Property(e => e.Id).HasColumnName("ID");
+            entity.Property(e => e.Hora).HasColumnType("datetime");
             entity.Property(e => e.Nome)
                 .HasMaxLength(80)
                 .IsUnicode(false);
@@ -63,7 +64,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Produto>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC2717649DFC");
+            entity.HasKey(e => e.Id).HasName("PK__Produto__3214EC276195FC20");
 
             entity.ToTable("Produto");
 
@@ -84,7 +85,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<ProdutoPedido>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC2724776867");
+            entity.HasKey(e => e.Id).HasName("PK__ProdutoP__3214EC2780890D0B");
 
             entity.ToTable("ProdutoPedido");
 
@@ -105,7 +106,7 @@ public partial class VascoContext : DbContext
 
         modelBuilder.Entity<Usuario>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC27802BD47A");
+            entity.HasKey(e => e.Id).HasName("PK__Usuario__3214EC276AE40F3B");
 
             entity.ToTable("Usuario");
 

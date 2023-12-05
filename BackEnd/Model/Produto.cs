@@ -7,6 +7,7 @@ public partial class Produto
 {
     public int Id { get; set; }
 
+    public byte[]? Imagem { get; set; }
 
     public string Nome { get; set; } = null!;
 
@@ -15,7 +16,6 @@ public partial class Produto
     public string Descricao { get; set; } = null!;
 
     public bool Promocao { get; set; }
-    public byte[]? Imagem { get; set; }
 
     public double? PrecoPromocao { get; set; }
 

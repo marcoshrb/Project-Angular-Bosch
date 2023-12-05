@@ -37,6 +37,7 @@ create table Pedido(
     ID int identity primary key,
     Nome varchar(80) not null,
     Total float,
+    Hora dateTime,
     Entregue bit not null
 );
 go

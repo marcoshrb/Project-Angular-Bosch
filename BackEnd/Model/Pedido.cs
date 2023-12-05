@@ -11,6 +11,8 @@ public partial class Pedido
 
     public double? Total { get; set; }
 
+    public DateTime? Hora { get; set; }
+
     public bool Entregue { get; set; }
 
     public virtual ICollection<ProdutoPedido> ProdutoPedidos { get; } = new List<ProdutoPedido>();
