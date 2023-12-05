@@ -15,11 +15,14 @@ public class ProdutoService: IProdutoService
 
     public async Task Create(ProdutoData data)
     {
+        double numero = data.preco;
+        string numeroFormatado = numero.ToString("0.00");
+
         Produto produto = new Produto();
 
         produto.Imagem = data.Imagem;
         produto.Nome = data.name;
-        produto.Preco = data.preco;
+        produto.Preco = numeroFormatado;
         produto.Descricao = data.descricao;
         produto.Promocao = data.promocao;
         produto.PrecoPromocao = data.precoPromocao;

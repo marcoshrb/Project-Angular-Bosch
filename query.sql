@@ -23,7 +23,7 @@ create table Produto(
     ID int identity primary key,
     Imagem varbinary(MAX) null,
     Nome varchar(80) not null,
-    Preco float not null,
+    Preco varchar(10) not null,
     Descricao varchar(500) not null,
     Promocao bit not null,
 	PrecoPromocao float,

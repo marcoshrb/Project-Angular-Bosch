@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
@@ -13,7 +13,7 @@ import { ProdutoService } from '../service/produto-service';
   templateUrl: './produtos-screen.component.html',
   styleUrl: './produtos-screen.component.css'
 })
-export class ProdutosScreenComponent {
+export class ProdutosScreenComponent implements OnInit{
 
   constructor(
     private product: ProdutoService, 
@@ -21,6 +21,7 @@ export class ProdutosScreenComponent {
     ) 
     { }
 
+  list: any = [];
 
   name: string = ""
   preco: number = 0
@@ -43,4 +44,17 @@ export class ProdutosScreenComponent {
     console.log("foiii");
     alert("Produto cadastrado!")
   }
+
+  ngOnInit() {
+    this.product.getProdutos().subscribe(
+      (data: any) => {
+        this.list = data;
+        console.log("produtos:", this.list);
+      },
+      (error: any) => {
+        console.error('Erro ao obter produtos:', error);
+      }
+    );
+  }
+
 }

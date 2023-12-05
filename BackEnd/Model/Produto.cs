@@ -11,7 +11,7 @@ public partial class Produto
 
     public string Nome { get; set; } = null!;
 
-    public double Preco { get; set; }
+    public string Preco { get; set; } = null!;
 
     public string Descricao { get; set; } = null!;
 

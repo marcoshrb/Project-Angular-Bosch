@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { ApiClientService } from '../api-client.service';
 
 import { ProdutoData } from '../data/produto-data';
+import { Observable, map } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -10,16 +11,17 @@ import { ProdutoData } from '../data/produto-data';
 export class ProdutoService {
     constructor(private http: ApiClientService) { }
 
-    register(data: ProdutoData)
-    {   
-        console.log('chegay')
+    register(data: ProdutoData) {
         this.http.post('produto/create', data)
             .subscribe(response => console.log(response))
     }
 
-    getProdutos()
-    {
-        
+    getProdutos(): Observable<any[]> {
+        return this.http.get('produto/getAll').pipe(
+            map((response: any) => {
+                return response;
+            })
+        );
     }
 
 }

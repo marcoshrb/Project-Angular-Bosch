@@ -27,56 +27,23 @@
 
 <div class="container text-center">
     <div class="row align-items-start">
-        <div class="col-12 col-sm-6 col-md-4">
+        <div class="col-12 col-sm-6 col-md-4"  *ngFor="let item of list">
             <div class="card" style="width: 100%; min-height: 70%;">
                 <img src="../../assets/img/Monumental.avif" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h1 class="card-title">Monumental</h1>
-                    <p class="card-text">Bled de 140g, 3 fatias de American cheese, cebola caramelizada e molho especial
-                        em um brioche macio. Experimente e descubra
-                        porque é verdadeiramente monumental.
+                    <h1 class="card-title">{{item.nome}}</h1>
+                    <p class="card-text">
+                        {{item.descricao}}
                     </p>
                 </div>
                 <div class="card-footer">
-                    <h1>R$34,90</h1>
-                    <a href="#" class="btn btn-dark">Editar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <div class="card" style="width: 100%; min-height: 70%;">
-                <img src="../../assets/img/Vascudo.avif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h1 class="card-title">Vascudo</h1>
-                    <p class="card-text">Blend suculento de 100g, 2 fatias de American cheese derretido e um mix de
-                        ketchup,
-                        mostarda e picles. Cada mordida é uma experiência única, assim como cada vitória desse grande
-                        time.
-                        Sinta o sabor Vascudo em cada mordida e torça junto com o Gigante da Colina!
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <h1>R$28,90</h1>
-                    <a href="#" class="btn btn-dark">Editar</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4">
-            <div class="card" style="width: 100%; min-height: 70%;">
-                <img src="../../assets/img/VASCO_DA_GRANJA.avif" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h1 class="card-title">VASCO DA GRANJA</h1>
-                    <p class="card-text">Frango Crocante, Maionese especial, alface americana e lâminas superfinas de
-                        tomate
-                    </p>
-                </div>
-                <div class="card-footer">
-                    <h1>R$27,90</h1>
+                    <h1>R${{item.preco}}</h1>
                     <a href="#" class="btn btn-dark">Editar</a>
                 </div>
             </div>
         </div>
 
+        
         <!-- adicionar -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="card card-adicionar" style="width: 100%; min-height: 70%;">
@@ -142,15 +109,18 @@
                         <img src="../../assets/img/Oferta_Vasco.avif" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h1 class="card-title">
-                                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Nome:" aria-label="Recipient's username with two button addons">
+                                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Nome:"
+                                    aria-label="Recipient's username with two button addons">
                             </h1>
                             <p class="card-text">
-                                <textarea [(ngModel)]="descricao" name="" id="" class="form-control" placeholder="Descrição:" cols="30" rows="4"></textarea>
-                            </p> 
+                                <textarea [(ngModel)]="descricao" name="" id="" class="form-control"
+                                    placeholder="Descrição:" cols="30" rows="4"></textarea>
+                            </p>
                         </div>
                         <div class="card-footer text-body-secondary">
                             <h1>
-                                <input [(ngModel)]="preco" type="text" class="form-control" placeholder="Preço:" aria-label="Recipient's username with two button addons">
+                                <input [(ngModel)]="preco" type="text" class="form-control" placeholder="Preço:"
+                                    aria-label="Recipient's username with two button addons">
                             </h1>
                         </div>
                     </div>
@@ -160,6 +130,7 @@
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
                 <button type="button" class="btn btn-success" (click)="create()">Adicionar</button>
             </div>
+
         </div>
     </div>
 </div>
