@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<VascoContext>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IProdutoService, ProdutoService>();
+builder.Services.AddTransient<IProdutoPedidosService, ProdutoPedidosService>();
 builder.Services.AddTransient<IPedidoService, PedidoService>();
 builder.Services.AddSingleton<ISecurityService, SecurityService>();
 builder.Services.AddSingleton<CryptoService>( p => new() {

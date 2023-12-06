@@ -37,16 +37,16 @@ public class PedidoController : ControllerBase
         return Ok(pedidos);
     }
 
-    // [HttpDelete("delete")]
-    // [EnableCors("DefaultPolicy")]
-    // public async Task<IActionResult> Delete(
-    // [FromBody] PedidoData pedidoData,
-    // [FromServices] IPedidoService pedidoService
-    // ) 
-    // {
-    //     var order = pedidoService.GetPedidoById(pedidoData.name).Result;
-    //     await pedidoService.Delete(order);
-    //     return Ok();
-    // }
+    [HttpDelete("delete")]
+    [EnableCors("DefaultPolicy")]
+    public async Task<IActionResult> Delete(
+    [FromBody] string pedidoData,
+    [FromServices] IPedidoService pedidoService
+    ) 
+    {
+        var order = pedidoService.GetPedidoByName(pedidoData).Result;
+        await pedidoService.Delete(order);
+        return Ok();
+    }
 
 }

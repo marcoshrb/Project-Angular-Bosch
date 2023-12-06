@@ -26,4 +26,5 @@ public partial class Produto
     public virtual ICollection<Ofertum> Oferta { get; } = new List<Ofertum>();
 
     public virtual ICollection<ProdutoPedido> ProdutoPedidos { get; } = new List<ProdutoPedido>();
+
 }

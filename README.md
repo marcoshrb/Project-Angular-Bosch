@@ -26,13 +26,13 @@
 - [ ] Aplica slow Hash na senha do usuário.
 - [x] Login retorna JWT para o frontend que o guarda no Sessin Storage.
 - [x] Após o Login a página de usuário normal ou adm é mostrada corretamente.
-- [ ] Adm é capaz de ver produtos existentes.
+- [x] Adm é capaz de ver produtos existentes.
 - [x] Adm é capaz de cadastrar novos produtos.
 - [ ] Adm é capaz de ver promoções existentes.
 - [ ] Adm é capaz de criar novas promoções.
 - [ ] Adm é capaz de ver Dashboard com dois gráficos de informações.
 - [ ] Gráficos do Dashboard realmente refletem os dados no banco.
-- [ ] É possível ver produtos existentes no Totem.
+- [x] É possível ver produtos existentes no Totem.
 - [ ] É possível adicionar itens em uma sacola.
 - [ ] Ao finalizar a compra o pedido é realmente registrado no banco de dados.
 - [ ] É possível ver o custo total do pedido.

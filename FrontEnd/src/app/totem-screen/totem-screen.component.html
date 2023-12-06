@@ -64,7 +64,8 @@
             <div class="scroll" style="overflow:scroll;  max-height: 74%;">
                 <div class="row align-items-start">
                     <div class="col-12 col-sm-6 col-md-4" *ngFor="let item of list">
-                        <a href="#">
+                        <a (click)="bosta(item.id)">
+                            <input value="{{item.id}}" type="text" style="display: none;"  [(ngModel)]="idItem">
                             <div class="card" style="min-width:100% ; min-height: 350px;">
                                 <div class="card-header">
                                     <h1>R${{item.preco}}</h1>

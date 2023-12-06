@@ -5,7 +5,7 @@ using BackEnd.Services;
 using DTO;
 using Microsoft.EntityFrameworkCore;
 
-public class PedidoService: IPedidoService
+public class PedidoService : IPedidoService
 {
     VascoContext ctx;
 
@@ -19,8 +19,8 @@ public class PedidoService: IPedidoService
         var hora = DateTime.Now;
 
         Pedido pedido = new Pedido();
-        
-        
+
+
         pedido.Nome = data.name;
         pedido.Total = data.total;
         pedido.Hora = hora;
@@ -30,12 +30,13 @@ public class PedidoService: IPedidoService
         await this.ctx.SaveChangesAsync();
     }
 
-   public List<Pedido> GetAll()
+    public List<Pedido> GetAll()
     {
         return ctx.Pedidos.ToList();
     }
 
-    public async Task Delete(Pedido pedido){
+    public async Task Delete(Pedido pedido)
+    {
         this.ctx.Remove(pedido);
         await this.ctx.SaveChangesAsync();
     }
@@ -50,15 +51,14 @@ public class PedidoService: IPedidoService
         return await query.FirstOrDefaultAsync();
     }
 
-    public Task<Pedido> GetPedidoByName(string name)
+    public async Task<Pedido> GetPedidoByName(string name)
     {
-        throw new NotImplementedException();
 
-        //        var query =
-        //     from pedido in this.ctx.Pedidos
-        //     where pedido.Usuario == id
-        //     select pedido;
+        var query =
+        from pedido in this.ctx.Pedidos
+        where pedido.Nome == name
+        select pedido;
 
-        // return await query.FirstOrDefaultAsync();
+        return await query.FirstOrDefaultAsync();
     }
 }
