@@ -1,6 +1,6 @@
 export interface ProdutoData{
     name: string
-    preco: number
+    preco: string
     descricao: string
     promocao: boolean
     precoPromocao: number

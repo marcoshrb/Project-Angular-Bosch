@@ -16,7 +16,7 @@ export class PedidoService {
             .subscribe(response => console.log(response))
     }
 
-    getProdutos(): Observable<any[]> {
+    getPedidos(): Observable<any[]> {
         return this.http.get('pedido/getAll').pipe(
             map((response: any) => {
                 return response;

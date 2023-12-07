@@ -24,7 +24,7 @@ export class ProdutosScreenComponent implements OnInit{
   list: any = [];
 
   name: string = ""
-  preco: number = 0
+  preco: string = ""
   descricao: string = ""
   promocao: boolean = false
   precoPromocao: number = 0
@@ -43,6 +43,21 @@ export class ProdutosScreenComponent implements OnInit{
     })
     console.log("foiii");
     alert("Produto cadastrado!")
+  }
+
+  IdEditar: number = 0;
+  nomeEditar : string =""
+  precoEditar: string = ""
+  descricaoEditar : string = ""
+  promocaoEditar : boolean = false
+  precoPromocaoEditar : number = 0
+  cupomEditar : string = ""
+  descricaoPromocaoEditar : string = ""
+
+  editar(){
+    console.log(this.IdEditar)
+
+    
   }
 
   ngOnInit() {

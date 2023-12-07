@@ -10,4 +10,7 @@ public interface IProdutoService
     Task Create(ProdutoData data);
 
     List<Produto> GetAll();
+    Task<Produto> GetProdutobyId(int id);
+
+    Task Update(ProdutoData data, int id);
 }

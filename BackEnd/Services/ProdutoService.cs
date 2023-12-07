@@ -4,7 +4,7 @@ using BackEnd.Services;
 using DTO;
 using Microsoft.EntityFrameworkCore;
 
-public class ProdutoService: IProdutoService
+public class ProdutoService : IProdutoService
 {
     VascoContext ctx;
 
@@ -37,4 +37,46 @@ public class ProdutoService: IProdutoService
     {
         return ctx.Produtos.ToList();
     }
+
+    public async Task<Produto> GetProdutobyId(int id)
+    {
+
+        var query =
+            from u in this.ctx.Produtos
+            where u.Id == id
+            select u;
+
+        return await query.FirstOrDefaultAsync();
+    }
+
+    public async Task Update(ProdutoData data, int id)
+    {
+        var query =
+            from u in this.ctx.Produtos
+            where u.Id == id
+            select u;
+
+        var product = await query.FirstOrDefaultAsync();
+
+
+        if (product != null)
+        {
+            product.Imagem = data.Imagem;
+            product.Nome = data.name;
+            product.Preco = data.preco.ToString("0.00");
+            product.Descricao = data.descricao;
+            product.Promocao = data.promocao;
+            product.PrecoPromocao = data.precoPromocao;
+            product.Cupom = data.cupom;
+            product.DescricaoPromocao = data.descricaoPromocao;
+
+            this.ctx.Update(product);
+
+            await this.ctx.SaveChangesAsync();
+        }
+        else {
+            
+        }
+    }
+
 }

@@ -38,7 +38,7 @@
                 </div>
                 <div class="card-footer">
                     <h1>R${{item.preco}}</h1>
-                    <a href="#" class="btn btn-dark">Editar</a>
+                    <button (click)="IdEditar = item.id" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Editar</button>
                 </div>
             </div>
         </div>
@@ -47,11 +47,10 @@
         <!-- adicionar -->
         <div class="col-12 col-sm-6 col-md-4">
             <div class="card card-adicionar" style="width: 100%; min-height: 70%;">
-                <a href="" class="aAdicionar" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <a class="aAdicionar" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <img src="../../assets/img/MaisSimbolo.png" class="card-img-top p-2 p-md-5" alt="...">
                     <div class="card-body">
                         <h1 class="card-title">Adicionar produto</h1>
-
                     </div>
 
                 </a>
@@ -134,3 +133,40 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Editar -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="text-center">
+
+                    <div class="card" style="width: 100%; min-height: 40vw;">
+                        <img src="../../assets/img/Oferta_Vasco.avif" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h1 class="card-title">
+                                <input [(ngModel)]="name" type="text" class="form-control" placeholder="Nome:"
+                                    aria-label="Recipient's username with two button addons">
+                            </h1>
+                            <p class="card-text">
+                                <textarea [(ngModel)]="descricao" name="" id="" class="form-control"
+                                    placeholder="Descrição:" cols="30" rows="4"></textarea>
+                            </p>
+                        </div>
+                        <div class="card-footer text-body-secondary">
+                            <h1>
+                                <input [(ngModel)]="preco" type="text" class="form-control" placeholder="Preço:"
+                                    aria-label="Recipient's username with two button addons">
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer" style="border: 0cm;">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" (click)="editar()">Salvar</button>
+            </div>
+
+        </div>
+    </div>
+  </div>

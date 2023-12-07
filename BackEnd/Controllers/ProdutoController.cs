@@ -36,5 +36,33 @@ public class ProdutoController : ControllerBase
 
             return Ok(produtos);
         }
-       
-}
+
+        [HttpPost("getId")]
+        [EnableCors("DefaultPolicy")]
+        public IActionResult GetId(
+            [FromBody] int id,
+            [FromServices] IProdutoService service
+        )
+        {
+            var produtoId = service.GetProdutobyId(id); 
+
+            return Ok(produtoId);
+        }
+
+        [HttpPut("update")]
+        [EnableCors("DefaultPolicy")]
+        public async Task<IActionResult> UpdateAsync(
+            [FromBody] ProdutoData produto,int id,
+            [FromServices] IProdutoService service
+        )
+        {
+            var errors = new List<string>();
+                if(produto is null)
+                    errors.Add("É necessário informar um produto.");
+                if(errors.Count > 0)
+                    return BadRequest(errors);
+
+                await service.Update(produto, id);
+                return Ok();
+        }
+}   

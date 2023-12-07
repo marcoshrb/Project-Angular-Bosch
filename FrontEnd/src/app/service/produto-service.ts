@@ -24,5 +24,13 @@ export class ProdutoService {
         );
     }
 
+    // editarProdutos(data: ProdutoData, id : number){
+
+    //     const requestData = { ...data, id: id };
+
+    //     return this.http.put('produto/update', requestData)
+    //     .subscribe()
+    // } 
+
 }
 
